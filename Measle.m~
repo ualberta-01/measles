@@ -1,7 +1,7 @@
 % Hien Le
 % Jun 29 2017
 
-function [S,I,V,t] = Measle(N,S0,I0,V0,t0,p,beta,mu,sigma,c,n)
+function [S,I,V,t] = SIVR(S0,I0,V0,t0,p,beta,mu,sigma,c,n)
 
 S = zeros(n, 1);
 I = zeros(n, 1);
@@ -42,49 +42,49 @@ for i = 1:n
         
         S(i+1, 1) = S(i, 1);
         I(i+1, 1) = I(i, 1) + 1;
-        V(i+1, 1) = V(i, 1) - 1;
+        R(i+1, 1) = R(i, 1) - 1;
         
-    elseif (alpha2/alpha9 <= r2 && r2 < alpha3/alpha9)
+    elseif (alpha2/alpha0 <= r2 && r2 < alpha3/alpha9)
         
         S(i+1, 1) = S(i, 1);
         I(i+1, 1) = I(i, 1) - 1;
-        V(i+1, 1) = V(i, 1);
+        V(i+1, 1) = R(i, 1);
         
     elseif (alpha3/alpha9 <= r2 && r2 < alpha4/alpha9)
         
         S(i+1, 1) = S(i, 1) - 1;
         I(i+1, 1) = I(i, 1);
-        V(i+1, 1) = V(i, 1) + 1;  
+        R(i+1, 1) = R(i, 1) + 1;  
         
     elseif (alpha4/alpha9 <= r2 && r2 < alpha5/alpha9)
         
         S(i+1, 1) = S(i, 1) + 1;
         I(i+1, 1) = I(i, 1) - 1;
-        V(i+1, 1) = V(i, 1);    
+        R(i+1, 1) = R(i, 1);    
         
     elseif (alpha5/alpha9 <= r2 && r2 < alpha6/alpha9)
         
         S(i+1, 1) = S(i, 1);
         I(i+1, 1) = I(i, 1) - 1;
-        V(i+1, 1) = V(i, 1) + 1;
+        R(i+1, 1) = R(i, 1) + 1;
         
     elseif (alpha6/alpha9 <= r2 && r2 < alpha7/alpha9)
         
         S(i+1, 1) = S(i, 1) + 1;
         I(i+1, 1) = I(i, 1) - 1;
-        V(i+1, 1) = V(i, 1);
+        R(i+1, 1) = R(i, 1);
     
     elseif (alpha7/alpha9 <= r2 && r2 < alpha8/alpha9)
         
         S(i+1, 1) = S(i, 1) + 1;
         I(i+1, 1) = I(i, 1);
-        V(i+1, 1) = V(i, 1);
+        R(i+1, 1) = R(i, 1);
             
     else
         
         S(i+1, 1) = S(i, 1);
         I(i+1, 1) = I(i, 1);
-        V(i+1, 1) = V(i, 1) + 1;
+        R(i+1, 1) = R(i, 1) + 1;
         
     end;
 

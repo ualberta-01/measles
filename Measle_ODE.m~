@@ -1,0 +1,26 @@
+% Hien Le
+% Jun 30, 2017
+
+%function [S,I,V] = Measle_ODE(N,p,beta,mu,sigma,c)
+
+N = 1000;
+S0 = 50;
+I0 = 2;
+V0 = 948;
+p = 0.95;
+beta = 2;
+mu = 0.01;
+sigma = 0.6;
+c = 0.5;
+
+f = @(t,x) (p*mu*N - beta*x(1)*x(2)/N - mu*S;
+ode2 = diff(I) == beta*S*I/N + sigma*beta*V*I/N - mu*I - c*I;
+ode3 = diff(V) == -sigma*beta*V*I/N - mu*V + (1-p)*mu*N;
+
+odes = [ode1, ode2, ode3];
+
+[S(t), I(t), V(t)] = dsolve(odes, conds);
+
+fplot(V)
+
+%end;

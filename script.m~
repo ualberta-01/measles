@@ -56,6 +56,14 @@ plot (t,I)
 
 plot(t,I)
 
+% Measle
+
+
+[S,I,V,t] = Measle(1000,45,5,950,0,0.95,2,0.01,0.95,0.5,1000);
+Measle(N,S0,I0,V0,t0,p,beta,mu,sigma,c,n)
+
+plot(t,I)
+
 
 
 
