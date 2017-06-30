@@ -1,3 +1,6 @@
+% Hien Le
+% Jun 29 2017
+
 function [S,I,V,t] = SIVR(S0,I0,V0,t0,p,beta,mu,sigma,c,n)
 
 S = zeros(n, 1);
