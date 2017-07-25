@@ -9,3 +9,4 @@ f = @(t,x) [p*mu*N - beta*x(1)*x(2)/N - mu*x(1); beta*x(1)*x(2)/N + sigma*beta*x
 
 plot(t,xa(:,2));
 
+max(xa(:,2))
